@@ -608,14 +608,14 @@ packages:
   with_converter_annotation:
     dependency: "direct main"
     description:
-      path: "../../with_converter_annotation"
+      path: "../with_converter_annotation"
       relative: true
     source: path
     version: "0.0.1"
   with_converter_generator:
     dependency: "direct dev"
     description:
-      path: ".."
+      path: "../with_converter_generator"
       relative: true
     source: path
     version: "0.0.1"
