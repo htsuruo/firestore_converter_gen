@@ -11,10 +11,10 @@ dependencies:
     path: ../../with_converter_annotation
 
 dev_dependencies:
-  with_converter_generator:
-    path: ..
   build_runner: ^2.4.6
   pedantic_mono: ^1.24.0+1
+  with_converter_generator:
+    path: ..
 
 flutter:
   uses-material-design: true
