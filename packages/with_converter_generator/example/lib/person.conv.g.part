@@ -7,39 +7,39 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-User _from(
+Person _from(
   DocumentSnapshot<Map<String, dynamic>> snapshot,
-  SnapshotOptions? options,
+  SnapshotOptions? _,
 ) =>
-    User.fromJson(snapshot.data()!);
+    Person.fromJson(snapshot.data()!);
 
 Map<String, dynamic> _to(
-  User data,
+  Person data,
   SetOptions? options,
 ) =>
     data.toJson();
 
-extension DocumentReferenceUserConverter on DocumentReference {
-  DocumentReference<User> withUserConverter() {
-    return withConverter<User>(
+extension DocumentReferencePersonConverter on DocumentReference {
+  DocumentReference<Person> withPersonConverter() {
+    return withConverter<Person>(
       fromFirestore: _from,
       toFirestore: _to,
     );
   }
 }
 
-extension CollectionReferenceUserConverter on CollectionReference {
-  CollectionReference<User> withUserConverter() {
-    return withConverter<User>(
+extension CollectionReferencePersonConverter on CollectionReference {
+  CollectionReference<Person> withPersonConverter() {
+    return withConverter<Person>(
       fromFirestore: _from,
       toFirestore: _to,
     );
   }
 }
 
-extension QueryUserConverter on Query {
-  Query<User> withUserConverter() {
-    return withConverter<User>(
+extension QueryPersonConverter on Query {
+  Query<Person> withPersonConverter() {
+    return withConverter<Person>(
       fromFirestore: _from,
       toFirestore: _to,
     );

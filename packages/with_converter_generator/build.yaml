@@ -15,8 +15,7 @@ builders:
   with_converter_generator:
     import: 'package:with_converter_generator/builder.dart'
     builder_factories: ['withConverterBuilder']
-    build_extensions: { '.dart': ['.conv.dart'] }
+    build_extensions: { '.dart': ['.g.dart'] }
     auto_apply: dependents
     build_to: source
     applies_builders: ['source_gen|combining_builder']
-    # runs_before: ['json_serializable|json_serializable']

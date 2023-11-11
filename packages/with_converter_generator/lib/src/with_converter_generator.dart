@@ -5,8 +5,7 @@ import 'package:build/src/builder/build_step.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:with_converter_annotation/with_converter_annotation.dart';
 
-class WithConverterGenerator
-    extends GeneratorForAnnotation<WithConverterAnnotation> {
+class WithConverterGenerator extends GeneratorForAnnotation<WithConverter> {
   @override
   Stream<String> generateForAnnotatedElement(
     Element element,
@@ -24,7 +23,7 @@ class WithConverterGenerator
 
     $name _from(
       DocumentSnapshot<Map<String, dynamic>> snapshot,
-      SnapshotOptions? options,
+      SnapshotOptions? _,
     ) =>
         $name.fromJson(snapshot.data()!);
 

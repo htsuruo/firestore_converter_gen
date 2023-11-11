@@ -1,5 +1,3 @@
-class WithConverterAnnotation {
-  const WithConverterAnnotation();
+class WithConverter {
+  const WithConverter();
 }
-
-const withConverter = WithConverterAnnotation();
