@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:with_converter_generator/with_converter_generator.dart';
+import 'package:with_converter_annotation/with_converter_annotation.dart';
 
 void main() {
   test('adds one to input values', () {

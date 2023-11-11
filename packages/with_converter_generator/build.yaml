@@ -1,0 +1,22 @@
+targets:
+  $default:
+    builders:
+      with_converter_generator:
+        enabled: true
+        generate_for:
+          exclude:
+            - test
+            - example
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - 'type=lint'
+
+builders:
+  with_converter_generator:
+    import: 'package:with_converter_generator/builder.dart'
+    builder_factories: ['freezed']
+    build_extensions: { '.dart': ['.conv.dart'] }
+    auto_apply: dependents
+    build_to: source
+    # runs_before: ['json_serializable|json_serializable']

@@ -1,4 +1,4 @@
-library with_converter_generator;
+library with_converter_annotation;
 
 /// A Calculator.
 class Calculator {
