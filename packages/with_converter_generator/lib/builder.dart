@@ -6,6 +6,6 @@ import 'package:with_converter_generator/src/with_converter_generator.dart';
 Builder withConverterBuilder(BuilderOptions options) {
   return SharedPartBuilder(
     [WithConverterGenerator()],
-    'conv',
+    'with_converter',
   );
 }
