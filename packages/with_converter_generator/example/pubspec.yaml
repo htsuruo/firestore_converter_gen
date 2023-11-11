@@ -7,6 +7,7 @@ environment:
   sdk: ^3.1.0
 
 dependencies:
+  cloud_firestore: ^4.13.0
   with_converter_annotation:
     path: ../../with_converter_annotation
 

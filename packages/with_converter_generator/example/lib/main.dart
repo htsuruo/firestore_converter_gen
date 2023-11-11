@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:with_converter_annotation/with_converter_annotation.dart';
 
 part 'main.g.dart';
