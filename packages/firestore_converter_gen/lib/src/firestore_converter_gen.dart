@@ -5,8 +5,7 @@ import 'package:build/src/builder/build_step.dart';
 import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
-class FirestoreConverterGenerator
-    extends GeneratorForAnnotation<FirestoreConverter> {
+class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
   @override
   Stream<String> generateForAnnotatedElement(
     Element element,
