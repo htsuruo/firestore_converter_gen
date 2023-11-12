@@ -1,7 +1,12 @@
 name: firestore_converter_annotation
-description: A new Flutter package project
+description: Annotation that support typed converter code generation via the
+  `firestore_converter_gen` package.
 version: 0.0.1
 homepage: https://github.com/htsuruo/firestore_converter_gen
+topics:
+  - build-runner
+  - codegen
+  - cloud_firestore
 
 environment:
   sdk: ^3.1.0

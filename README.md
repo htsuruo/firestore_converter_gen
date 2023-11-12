@@ -2,9 +2,9 @@
 
 This package automatically generates typed converters for [cloud_firestore](https://pub.dev/packages/cloud_firestore).
 
-When you add the `@FirestoreConverter()` or `@firestoreConverter` annotation to your defined model, typed converter methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
+When you add the `@FirestoreConverter()` or `@firestoreConverter` annotation to your defined model class, typed converter methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
 
-This package consists of the following two packages:
+This generator consists of the following two packages:
 - [firestore_converter_gen](https://github.com/htsuruo/firestore_converter_gen/tree/main/packages/firestore_converter_gen)
   - The logic for automatic generation.
 - [firestore_converter_annotation](https://github.com/htsuruo/firestore_converter_gen/tree/main/packages/firestore_converter_annotation)
@@ -12,18 +12,19 @@ This package consists of the following two packages:
 
 ## Usage
 
-1. Add packages to the `dependencies` and `dev_dependencies` in `pubspec.yaml`.
+#### 1. Add packages to the `dependencies` and `dev_dependencies` in `pubspec.yaml`
 
 ```yaml:pubspec.yaml
 dependencies:
+  # cloud_firestore:
   firestore_converter_annotation:
 
 dev_dependencies:
-  build_runner:
+  # build_runner:
   firestore_converter:
 ```
 
-2. Set `@FirestoreConverter()` annotation to the class for generation.
+#### 2. Set `@FirestoreConverter()` annotation to the class for generation
 
 - Declare `[filename].g.dart`.
 - To use this package, `toJson` and `fromJson` must be predefined, as following example.
@@ -31,6 +32,7 @@ dev_dependencies:
 ```dart:person.dart
 part 'person.g.dart';
 
+// Set annotation here.
 @FirestoreConverter()
 class Person {
   Person({required this.firstName});
@@ -47,7 +49,7 @@ class Person {
 }
 ```
 
-3. Run `build_runner`
+#### 3. Run `build_runner`
 
 ```sh
 dart run build_runner build
