@@ -31,7 +31,6 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
     ) =>
         data.toJson();
 
-    // typed with converter extension methods for DocumentReference
     extension DocumentReference${name}Converter on DocumentReference {
       DocumentReference<$name> $functionName() {
         return withConverter<$name>(
@@ -41,7 +40,6 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       }
     }
 
-    // typed with converter extension methods for CollectionReference
     extension CollectionReference${name}Converter on CollectionReference {
       CollectionReference<$name> $functionName() {
         return withConverter<$name>(
@@ -51,7 +49,6 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       }
     }
 
-    // typed with converter extension methods for Query(CollectionGroup)
     extension Query${name}Converter on Query {
       Query<$name> $functionName() {
         return withConverter<$name>(
@@ -61,7 +58,6 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       }
     }
 
-    // You can convert DocumentReference with `$name` typed directly.
     // class ${name}RefConverter extends DocumentReferenceConverterBase<$name> {
     //   const ${name}RefConverter();
     //
