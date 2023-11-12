@@ -17,7 +17,7 @@ builders:
   firestore_converter_gen:
     import: 'package:firestore_converter_gen/builder.dart'
     builder_factories: ['firestoreConverterBuilder']
-    build_extensions: { '.dart': ['firestore_converter.g.dart'] }
+    build_extensions: { '.dart': ['firestore_converter.g.part'] }
     auto_apply: dependents
     build_to: cache
     applies_builders: ['source_gen|combining_builder']

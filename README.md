@@ -23,9 +23,14 @@ dev_dependencies:
   firestore_converter:
 ```
 
-2. To use this package, `toJson` and `fromJson` must be predefined, as following example.
+2. Set `@FirestoreConverter()` annotation to the class for generation.
+
+- Declare `[filename].g.dart`.
+- To use this package, `toJson` and `fromJson` must be predefined, as following example.
 
 ```dart:person.dart
+part 'person.g.dart';
+
 @FirestoreConverter()
 class Person {
   Person({required this.firstName});

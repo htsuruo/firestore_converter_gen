@@ -3,7 +3,7 @@
 part of 'example.dart';
 
 // **************************************************************************
-// WithConverterGenerator
+// Generator: FirestoreConverterGen
 // **************************************************************************
 
 // coverage:ignore-file
@@ -21,6 +21,7 @@ Map<String, dynamic> _to(
 ) =>
     data.toJson();
 
+// typed with converter extension methods for DocumentReference
 extension DocumentReferencePersonConverter on DocumentReference {
   DocumentReference<Person> withPersonConverter() {
     return withConverter<Person>(
@@ -30,6 +31,7 @@ extension DocumentReferencePersonConverter on DocumentReference {
   }
 }
 
+// typed with converter extension methods for CollectionReference
 extension CollectionReferencePersonConverter on CollectionReference {
   CollectionReference<Person> withPersonConverter() {
     return withConverter<Person>(
@@ -39,6 +41,7 @@ extension CollectionReferencePersonConverter on CollectionReference {
   }
 }
 
+// typed with converter extension methods for Query(CollectionGroup)
 extension QueryPersonConverter on Query {
   Query<Person> withPersonConverter() {
     return withConverter<Person>(
@@ -47,3 +50,14 @@ extension QueryPersonConverter on Query {
     );
   }
 }
+
+// You can convert DocumentReference with `Person` typed directly.
+// class PersonRefConverter extends DocumentReferenceConverterBase<Person> {
+//   const PersonRefConverter();
+//
+//   @override
+//   DocumentReference<Person> convert(
+//     DocumentReference<Map<String, dynamic>> ref,
+//   ) =>
+//       ref.withPersonConverter();
+// }

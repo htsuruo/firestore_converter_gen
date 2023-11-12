@@ -62,15 +62,15 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
     }
 
     // You can convert DocumentReference with `$name` typed directly.
-    class ${name}RefConverter extends DocumentReferenceConverterBase<$name> {
-      const ${name}RefConverter();
-
-      @override
-      DocumentReference<$name> convert(
-        DocumentReference<Map<String, dynamic>> ref,
-      ) =>
-          ref.with${name}Converter();
-    }
+    // class ${name}RefConverter extends DocumentReferenceConverterBase<$name> {
+    //   const ${name}RefConverter();
+    //
+    //   @override
+    //   DocumentReference<$name> convert(
+    //     DocumentReference<Map<String, dynamic>> ref,
+    //   ) =>
+    //       ref.with${name}Converter();
+    // }
     ''';
   }
 }
