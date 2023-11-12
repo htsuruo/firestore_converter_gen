@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:with_converter_annotation/with_converter_annotation.dart';
+import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
 
 part 'example.g.dart';
 
