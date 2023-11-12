@@ -57,6 +57,16 @@ class WithConverterGenerator extends GeneratorForAnnotation<WithConverter> {
         );
       }
     }
+
+    class ${name}RefConverter extends DocumentReferenceConverterBase<$name> {
+      const ${name}RefConverter();
+
+      @override
+      DocumentReference<$name> convert(
+        DocumentReference<Map<String, dynamic>> ref,
+      ) =>
+          ref.with${name}Converter();
+    }
     ''';
   }
 }

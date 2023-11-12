@@ -7,3 +7,4 @@ library with_converter_annotation;
 // export 'package:cloud_firestore/cloud_firestore.dart';
 
 export 'src/annotation.dart';
+export 'src/document_reference_converter_base.dart';
