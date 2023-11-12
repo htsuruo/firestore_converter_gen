@@ -1,0 +1,3 @@
+class WithConverter {
+  const WithConverter();
+}
