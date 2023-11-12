@@ -2,7 +2,7 @@
 
 This package automatically generates typed converters for [cloud_firestore](https://pub.dev/packages/cloud_firestore).
 
-When you add the `@FirestoreConverter` or `@firestoreConverter` annotation to your defined model, those methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
+When you add the `@FirestoreConverter` or `@firestoreConverter` annotation to your defined model, typed converter methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
 
 This package consists of the following two packages:
 - [firestore_converter_gen](https://github.com/htsuruo/firestore_converter_gen/tree/main/packages/firestore_converter_gen)
