@@ -3,7 +3,7 @@ import 'package:with_converter_annotation/with_converter_annotation.dart';
 
 part 'example.g.dart';
 
-@WithConverter()
+@FirestoreConverter()
 class Person {
   Person({
     required this.firstName,

@@ -1,7 +1,7 @@
-name: with_converter_generator
+name: firestore_converter_gen
 description: A new Flutter package project.
 version: 0.0.1
-homepage: https://github.com/htsuruo/with_converter_generator
+homepage: https://github.com/htsuruo/firestore_converter_gen
 
 environment:
   sdk: ^3.1.0
@@ -10,9 +10,9 @@ dependencies:
   analyzer: '^6.2.0'
   build: ^2.4.1
   build_config: ^1.1.1
+  firestore_converter_annotation:
+    path: ../firestore_converter_annotation
   source_gen: ^1.4.0
-  with_converter_annotation:
-    path: ../with_converter_annotation
 
 dev_dependencies:
   pedantic_mono: ^1.24.0+1

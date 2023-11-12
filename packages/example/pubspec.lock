@@ -241,6 +241,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.8.1"
+  firestore_converter_annotation:
+    dependency: "direct main"
+    description:
+      path: "../firestore_converter_annotation"
+      relative: true
+    source: path
+    version: "0.0.1"
+  firestore_converter_gen:
+    dependency: "direct dev"
+    description:
+      path: "../firestore_converter_gen"
+      relative: true
+    source: path
+    version: "0.0.1"
   fixnum:
     dependency: transitive
     description:
@@ -605,20 +619,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
-  with_converter_annotation:
-    dependency: "direct main"
-    description:
-      path: "../with_converter_annotation"
-      relative: true
-    source: path
-    version: "0.0.1"
-  with_converter_generator:
-    dependency: "direct dev"
-    description:
-      path: "../with_converter_generator"
-      relative: true
-    source: path
-    version: "0.0.1"
   yaml:
     dependency: transitive
     description:

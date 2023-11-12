@@ -8,20 +8,20 @@ environment:
 
 dependencies:
   cloud_firestore: ^4.13.0
+  firestore_converter_annotation:
+    path: ../firestore_converter_annotation
   flutter:
     sdk: flutter
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  with_converter_annotation:
-    path: ../with_converter_annotation
 
 dev_dependencies:
   build_runner: ^2.4.6
+  firestore_converter_gen:
+    path: ../firestore_converter_gen
   freezed: ^2.4.5
   json_serializable: ^6.7.1
   pedantic_mono: ^1.24.0+1
-  with_converter_generator:
-    path: ../with_converter_generator
 
 flutter:
   uses-material-design: true

@@ -1,7 +1,7 @@
-name: with_converter_annotation
+name: firestore_converter_annotation
 description: A new Flutter package project
 version: 0.0.1
-homepage: https://github.com/htsuruo/with_converter_generator
+homepage: https://github.com/htsuruo/firestore_converter_gen
 
 environment:
   sdk: ^3.1.0

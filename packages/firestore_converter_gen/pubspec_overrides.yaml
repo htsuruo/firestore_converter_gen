@@ -1,4 +1,4 @@
 # melos_managed_dependency_overrides: with_converter_annotation
 dependency_overrides:
-  with_converter_annotation:
-    path: ../with_converter_annotation
+  firestore_converter_annotation:
+    path: ../firestore_converter_annotation

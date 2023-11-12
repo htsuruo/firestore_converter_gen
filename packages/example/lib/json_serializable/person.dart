@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:with_converter_annotation/with_converter_annotation.dart';
 
 part 'person.g.dart';
 
 @JsonSerializable()
-@WithConverter()
+@FirestoreConverter()
 class Person {
   Person({required this.firstName, required this.lastName, this.dateOfBirth});
 

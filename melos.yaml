@@ -1,5 +1,5 @@
-name: with_converter_generator
-repository: https://github.com/htsuruo/with_converter_generator
+name: firestore_converter_gen
+repository: https://github.com/htsuruo/firestore_converter_gen
 packages:
   - packages/**
 

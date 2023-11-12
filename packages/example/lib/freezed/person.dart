@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:with_converter_annotation/with_converter_annotation.dart';
 
 part 'person.freezed.dart';
 part 'person.g.dart';
 
 @freezed
-@WithConverter()
+@firestoreConverter
 class Person with _$Person {
   const factory Person({
     required String firstName,
