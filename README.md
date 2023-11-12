@@ -14,7 +14,7 @@ This package consists of the following two packages:
 
 1. Add packages to the `dependencies` and `dev_dependencies` in `pubspec.yaml`.
 
-```yaml: pubspec.yaml
+```yaml:pubspec.yaml
 dependencies:
   firestore_converter_annotation:
 
@@ -64,12 +64,14 @@ class Person with _$Person {
 }
 ```
 
-```dart
-// Return Firestore data typed with `Post` class, and then you can use some properties easily.
-final person = FirebaseFirestore.instance.collection('posts').withPostConverter().snapshots();
-
-```
-
 ## Features
 
-- Generates `withConverter` typed method for [DocumentReference](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/DocumentReference-class.html), [CollectionReference](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/CollectionReference-class.html), [Query](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/Query-class.html)
+### withConverter
+
+Generates `withConverter` typed method for [DocumentReference](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/DocumentReference-class.html), [CollectionReference](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/CollectionReference-class.html), [Query](https://pub.dev/documentation/cloud_firestore/latest/cloud_firestore/Query-class.html)
+
+For example, in the case of a `Post` class, `withPostConverter` is generated, allowing you to write simply as shown below.
+
+```dart
+final person = FirebaseFirestore.instance.collection('posts').withPostConverter().snapshots();
+```
