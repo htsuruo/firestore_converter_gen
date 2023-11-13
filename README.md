@@ -1,3 +1,7 @@
+### Since [cloud_firestore_odm](https://pub.dev/packages/cloud_firestore_odm) meets the requirements of this repository, it seems that this repository is not necessary.
+
+---
+
 # firestore_converter_gen
 
 This package automatically generates typed converters for [cloud_firestore](https://pub.dev/packages/cloud_firestore).
