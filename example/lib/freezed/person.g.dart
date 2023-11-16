@@ -30,7 +30,7 @@ extension on DocumentReference {
   }
 }
 
-CollectionReference<Person> personCollectionRef() =>
+CollectionReference<Person> get personCollectionRef =>
     FirebaseFirestore.instance.collection('persons').withConverter<Person>(
           fromFirestore: _from,
           toFirestore: _to,
@@ -41,10 +41,10 @@ DocumentReference<Person> personDocumentRef({
   String? documentId,
 }) =>
     ref == null
-        ? personCollectionRef().doc(documentId).withPersonConverter()
+        ? personCollectionRef.doc(documentId).withPersonConverter()
         : ref.withPersonConverter();
 
-Query<Person> personCollectionGroup() =>
+Query<Person> get personCollectionGroup =>
     FirebaseFirestore.instance.collectionGroup('persons').withConverter<Person>(
           fromFirestore: _from,
           toFirestore: _to,

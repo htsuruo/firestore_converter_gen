@@ -42,7 +42,7 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       }
     }
 
-    CollectionReference<$name> ${lowerName}CollectionRef() =>
+    CollectionReference<$name> get ${lowerName}CollectionRef =>
         FirebaseFirestore.instance.collection('$collectionName').withConverter<$name>(
               fromFirestore: _from,
               toFirestore: _to,
@@ -52,9 +52,9 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       DocumentReference? ref,
       String? documentId,
     }) =>
-        ref == null ? ${lowerName}CollectionRef().doc(documentId).with${name}Converter() : ref.with${name}Converter();
+        ref == null ? ${lowerName}CollectionRef.doc(documentId).with${name}Converter() : ref.with${name}Converter();
 
-    Query<$name> ${lowerName}CollectionGroup() =>
+    Query<$name> get ${lowerName}CollectionGroup =>
         FirebaseFirestore.instance.collectionGroup('$collectionName').withConverter<$name>(
               fromFirestore: _from,
               toFirestore: _to,
