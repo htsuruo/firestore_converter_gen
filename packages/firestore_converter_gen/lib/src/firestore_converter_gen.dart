@@ -13,7 +13,8 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
     BuildStep buildStep,
   ) async* {
     final name = element.name;
-    final functionName = 'with${name}Converter';
+    final lowerName = element.name?.toLowerCase();
+    final collectionName = annotation.read('name').literalValue! as String;
 
     yield '''
     // coverage:ignore-file
@@ -31,8 +32,9 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
     ) =>
         data.toJson();
 
-    extension DocumentReference${name}Converter on DocumentReference {
-      DocumentReference<$name> $functionName() {
+
+    extension on DocumentReference {
+      DocumentReference<$name> with${name}Converter() {
         return withConverter<$name>(
           fromFirestore: _from,
           toFirestore: _to,
@@ -40,33 +42,37 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
       }
     }
 
-    extension CollectionReference${name}Converter on CollectionReference {
-      CollectionReference<$name> $functionName() {
-        return withConverter<$name>(
-          fromFirestore: _from,
-          toFirestore: _to,
-        );
-      }
-    }
+    CollectionReference<$name> ${lowerName}CollectionRef() =>
+        FirebaseFirestore.instance.collection('$collectionName').withConverter<$name>(
+              fromFirestore: _from,
+              toFirestore: _to,
+            );
 
-    extension Query${name}Converter on Query {
-      Query<$name> $functionName() {
-        return withConverter<$name>(
-          fromFirestore: _from,
-          toFirestore: _to,
-        );
-      }
-    }
+    DocumentReference<$name> ${lowerName}DocumentRef({
+      DocumentReference? ref,
+      String? documentId,
+    }) =>
+        ref == null ? ${lowerName}CollectionRef().doc(documentId).with${name}Converter() : ref.with${name}Converter();
 
-    // class ${name}RefConverter extends DocumentReferenceConverterBase<$name> {
-    //   const ${name}RefConverter();
-    //
-    //   @override
-    //   DocumentReference<$name> convert(
-    //     DocumentReference<Map<String, dynamic>> ref,
-    //   ) =>
-    //       ref.with${name}Converter();
-    // }
+    Query<$name> ${lowerName}CollectionGroup() =>
+        FirebaseFirestore.instance.collectionGroup('$collectionName').withConverter<$name>(
+              fromFirestore: _from,
+              toFirestore: _to,
+            );
+
+    class ${name}RefConverter
+        implements JsonConverter<DocumentReference<$name>, Object> {
+      const ${name}RefConverter();
+
+      @override
+      DocumentReference<$name> fromJson(Object json) {
+        return (json as DocumentReference<Map<String, dynamic>>).with${name}Converter();
+      }
+
+      @override
+      Object toJson(DocumentReference<$name> object) =>
+          FirebaseFirestore.instance.doc(object.path);
+    }
     ''';
   }
 }

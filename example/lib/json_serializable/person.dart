@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'person.g.dart';
 
 @JsonSerializable()
-@FirestoreConverter()
+@FirestoreConverter('persons')
 class Person {
   Person({required this.firstName, required this.lastName, this.dateOfBirth});
 

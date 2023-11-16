@@ -21,7 +21,7 @@ Map<String, dynamic> _to(
 ) =>
     data.toJson();
 
-extension DocumentReferencePersonConverter on DocumentReference {
+extension on DocumentReference {
   DocumentReference<Person> withPersonConverter() {
     return withConverter<Person>(
       fromFirestore: _from,
@@ -30,30 +30,37 @@ extension DocumentReferencePersonConverter on DocumentReference {
   }
 }
 
-extension CollectionReferencePersonConverter on CollectionReference {
-  CollectionReference<Person> withPersonConverter() {
-    return withConverter<Person>(
-      fromFirestore: _from,
-      toFirestore: _to,
-    );
-  }
-}
+CollectionReference<Person> personCollectionRef() =>
+    FirebaseFirestore.instance.collection('persons').withConverter<Person>(
+          fromFirestore: _from,
+          toFirestore: _to,
+        );
 
-extension QueryPersonConverter on Query {
-  Query<Person> withPersonConverter() {
-    return withConverter<Person>(
-      fromFirestore: _from,
-      toFirestore: _to,
-    );
-  }
-}
+DocumentReference<Person> personDocumentRef({
+  DocumentReference? ref,
+  String? documentId,
+}) =>
+    ref == null
+        ? personCollectionRef().doc(documentId).withPersonConverter()
+        : ref.withPersonConverter();
 
-// class PersonRefConverter extends DocumentReferenceConverterBase<Person> {
-//   const PersonRefConverter();
-//
-//   @override
-//   DocumentReference<Person> convert(
-//     DocumentReference<Map<String, dynamic>> ref,
-//   ) =>
-//       ref.withPersonConverter();
-// }
+Query<Person> personCollectionGroup() =>
+    FirebaseFirestore.instance.collectionGroup('persons').withConverter<Person>(
+          fromFirestore: _from,
+          toFirestore: _to,
+        );
+
+class PersonRefConverter
+    implements JsonConverter<DocumentReference<Person>, Object> {
+  const PersonRefConverter();
+
+  @override
+  DocumentReference<Person> fromJson(Object json) {
+    return (json as DocumentReference<Map<String, dynamic>>)
+        .withPersonConverter();
+  }
+
+  @override
+  Object toJson(DocumentReference<Person> object) =>
+      FirebaseFirestore.instance.doc(object.path);
+}

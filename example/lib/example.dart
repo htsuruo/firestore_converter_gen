@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'example.g.dart';
 
-@FirestoreConverter()
+@FirestoreConverter('persons')
 class Person {
   Person({
     required this.firstName,

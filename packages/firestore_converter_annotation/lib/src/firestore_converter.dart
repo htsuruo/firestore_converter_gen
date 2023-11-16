@@ -1,5 +1,6 @@
 class FirestoreConverter {
-  const FirestoreConverter();
-}
+  const FirestoreConverter(this.name);
 
-const firestoreConverter = FirestoreConverter();
+  /// Collection name in Firestore
+  final String name;
+}
