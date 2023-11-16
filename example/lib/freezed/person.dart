@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firestore_converter_annotation/firestore_converter_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
