@@ -1,4 +1,4 @@
-### Since [cloud_firestore_odm](https://pub.dev/packages/cloud_firestore_odm) meets the requirements of this repository, it seems that this is not necessary.
+### Since [cloud_firestore_odm](https://pub.dev/packages/cloud_firestore_odm) meets the requirements of this repository, it seems that this is not necessary
 
 ---
 
@@ -6,7 +6,7 @@
 
 This package automatically generates type-safe converters for [cloud_firestore](https://pub.dev/packages/cloud_firestore).
 
-When you add the `@FirestoreConverter()` or `@firestoreConverter` annotation to your defined model class, type-safe converter methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
+When you add the `@FirestoreConverter()` annotation to your defined model class, type-safe converter methods will be automatically generated. This can be also used with [json_serializable](https://pub.dev/packages/json_serializable) and [freezed](https://pub.dev/packages/freezed).
 
 This generator consists of the following two packages:
 - [firestore_converter_gen](https://github.com/htsuruo/firestore_converter_gen/tree/main/packages/firestore_converter_gen)
@@ -63,7 +63,7 @@ dart run build_runner build
 
 ```dart:person.dart
 @freezed
-@firestoreConverter
+@FirestoreConverter()
 class Person with _$Person {
   const factory Person({
     required String firstName,
