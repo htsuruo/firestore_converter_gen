@@ -15,7 +15,10 @@ dependencies:
   build: ^2.4.1
   build_config: ^1.1.1
   firestore_converter_annotation:
-    path: ../firestore_converter_annotation
+    # TODO(htsuruo): Replace to pub.dev
+    git:
+      url: https://github.com/htsuruo/firestore_converter_gen
+      path: packages/firestore_converter_annotation
   recase: ^4.1.0
   source_gen: ^1.4.0
 
