@@ -6,7 +6,7 @@ import 'package:example/subcollection/user.dart';
 void main() {
   final collectionRef = userCollectionRef;
   final documentRef = userCollectionRef.doc('uid');
-  final subcollectionRef = postCollectionRef(userId: 'uid');
+  final subcollectionRef = postCollectionRef(parentId: 'uid');
   final subcollectionDocumentRef =
-      postCollectionRef(userId: 'uid').doc('postId');
+      postCollectionRef(parentId: 'uid').doc('postId');
 }

@@ -30,8 +30,11 @@ extension on DocumentReference {
   }
 }
 
-CollectionReference<Post> postCollectionRef({required String userId}) {
-  return userCollectionRef.doc(userId).collection('posts').withConverter<Post>(
+CollectionReference<Post> postCollectionRef({required String? parentId}) {
+  return userCollectionRef
+      .doc(parentId)
+      .collection('posts')
+      .withConverter<Post>(
         fromFirestore: _from,
         toFirestore: _to,
       );
