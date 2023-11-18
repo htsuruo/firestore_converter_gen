@@ -84,7 +84,7 @@ String _generateCollectionReference({
 }) {
   if (parentName != null) {
     return '''
-    CollectionReference<$name> ${lowerName}CollectionRef({required String ${parentName}Id}) {
+    CollectionReference<$name> ${lowerName}CollectionRef({required String? ${parentName}Id}) {
         return ${parentName}CollectionRef.doc(${parentName}Id).collection('$collectionName').withConverter<$name>(
               fromFirestore: _from,
               toFirestore: _to,
