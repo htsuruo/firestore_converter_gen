@@ -36,14 +36,6 @@ CollectionReference<Person> get personCollectionRef =>
           toFirestore: _to,
         );
 
-DocumentReference<Person> personDocumentRef({
-  DocumentReference? ref,
-  String? documentId,
-}) =>
-    ref == null
-        ? personCollectionRef.doc(documentId).withPersonConverter()
-        : ref.withPersonConverter();
-
 Query<Person> get personCollectionGroup =>
     FirebaseFirestore.instance.collectionGroup('persons').withConverter<Person>(
           fromFirestore: _from,

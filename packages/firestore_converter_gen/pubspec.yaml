@@ -16,6 +16,7 @@ dependencies:
   build_config: ^1.1.1
   firestore_converter_annotation:
     path: ../firestore_converter_annotation
+  recase: ^4.1.0
   source_gen: ^1.4.0
 
 dev_dependencies:
