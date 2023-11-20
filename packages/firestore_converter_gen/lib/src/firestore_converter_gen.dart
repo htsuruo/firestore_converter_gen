@@ -7,6 +7,10 @@ import 'package:firestore_converter_annotation/firestore_converter_annotation.da
 import 'package:recase/recase.dart';
 import 'package:source_gen/source_gen.dart';
 
+/// A code generator for FirestoreConverter annotations.
+///
+/// This class is responsible for generating code based on
+/// the [FirestoreConverter] annotation.
 class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
   @override
   Stream<String> generateForAnnotatedElement(
@@ -76,6 +80,10 @@ class FirestoreConverterGen extends GeneratorForAnnotation<FirestoreConverter> {
   }
 }
 
+/// Generates a collection reference.
+///
+/// This function returns a [String] representing the generated collection
+/// reference.
 String _generateCollectionReference({
   required String? parentName,
   required String name,

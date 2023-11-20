@@ -1,3 +1,5 @@
+/// A class that represents a Firestore converter.
+/// This class is used to define for `firestore_converter_gen`.
 class FirestoreConverter {
   const FirestoreConverter(this.name, {this.parent});
 
